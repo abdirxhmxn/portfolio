@@ -771,6 +771,12 @@ section,
   .hero p {
     font-size: 18px;
   }
+  .header-social-links{
+    display: none;
+  }
+  .Name{
+    font-size: 50px;
+  }
 }
 
 /*--------------------------------------------------------------
