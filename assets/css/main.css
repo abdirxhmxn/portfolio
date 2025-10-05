@@ -140,6 +140,7 @@ form[name="contact"] .loading:before {
   border-top-color: var(--surface-color);
   animation: php-email-form-loading 1s linear infinite;
 }
+
 form[name="contact"] button[type="submit"] {
   color: var(--contrast-color);
   background: var(--accent-color);
@@ -157,6 +158,7 @@ form[name="contact"] button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
   transform: translateY(-2px);
 }
+
 @keyframes php-email-form-loading {
   0% {
     transform: rotate(0deg);
@@ -787,10 +789,12 @@ section,
   .hero p {
     font-size: 18px;
   }
-  .header-social-links{
+
+  .header-social-links {
     display: none;
   }
-  .Name{
+
+  .Name {
     font-size: 50px;
   }
 }
@@ -828,38 +832,47 @@ section,
 /*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
+/* Remove the old bar-based stuff */
+.skills .progress,
+.skills .progress-bar-wrap,
+.skills .progress-bar,
 .skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+  display: none !important;
 }
 
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
+/* New skill item layout */
+.skills .skill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--heading-font);
+  font-weight: 600;
+  color: var(--heading-color);
+  text-transform: uppercase;
 }
 
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
+/* Icon size + color */
+.skills .skill i {
+  font-size: 50px;
+  /* adjust icon size */
+  line-height: 1;
+}
+
+/* Label styling */
+.skills .skill span {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.col-lg-60 {
+  width: 25%;
+}
+
+.skills-content {
+  display: flex;
+  justify-content: center;
 }
 
 /*--------------------------------------------------------------
